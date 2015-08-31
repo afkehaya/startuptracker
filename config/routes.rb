@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  resources :categories do
+    resources :startups, module: :categories  
+  end 
+
+  root :to => 'categories#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
