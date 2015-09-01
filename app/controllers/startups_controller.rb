@@ -1,5 +1,5 @@
 class StartupsController < ApplicationController
- befor_action :authenticate_user!
+ before_action :authenticate_user!
 
 	def create
 		@startup = @startupable.startups.new startup_params

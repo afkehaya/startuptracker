@@ -11,7 +11,7 @@
 	<% startupable.startups.each do |startup| %>
 	<tr>
 		<td><%= startup.company %></td>
-		<td><%= startup.url %></td>
+		<td><%= link_to startup.url, startup.url %></td>
 	</tr>
 	<% end %>
  </tbody>	
