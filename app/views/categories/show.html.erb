@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-  		<h3><%= @category.name %></h3>
-  		<h4>Number of startups: <%= @category.startups.count %></h4>
-	</div>
+		<div class="panel panel-default">
+		    <div class="panel-heading">
+		  		<h3><%= @category.name %></h3>
+		  		<h4>Number of startups: <%= @category.startups.count %></h4>
+			</div>
 
-	<div class="panel-body">
-		<%= render partial: "startups/startups", locals: {startupable: @category} %>
-	</div>
+			<div class="panel-body">
+				<%= render partial: "startups/startups", locals: {startupable: @category} %>
+			</div>
 
 
 
-	<div class="panel-footer">
-		<%= link_to 'Edit', edit_category_path(@category) %> |
-		<%= link_to 'Back', categories_path %>
-	</div>
-	
-</div>
-<%= render partial: "startups/form", locals: {startupable: @category} %>
+			<div class="panel-footer">
+				<%= link_to 'Edit', edit_category_path(@category) %> |
+				<%= link_to 'Back', categories_path %>
+			</div>
+			
+		</div>
+	<% if user_signed_in? %>
+		<%= render partial: "startups/form", locals: {startupable: @category} %>
+	<% end %>
 

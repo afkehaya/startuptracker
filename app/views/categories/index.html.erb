@@ -17,10 +17,13 @@
               <tr>
                 <td><%= category.name %></td>
                 <td><%= category.startups.count %></td>
+                
                 <td><%= link_to 'Show', category, class: "btn btn-default" %>
+                  <% if user_signed_in? %>
                 <%= link_to 'Edit', edit_category_path(category), class: "btn btn-default" %>
                 <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
               </tr>
+              <% end %>
             <% end %>
           </tbody>
         </table>
@@ -28,10 +31,15 @@
 
     <br>
 
-<% if user_signed_in? %>
+
   <div class="panel-footer">
-    <%= link_to 'New Category', new_category_path, class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Category', new_category_path, class: "btn btn-primary" %>
+        <% else %>
+      <%= link_to "Sign up to add your own category", new_user_registration_path %>
+    <% end %>  
   </div>
-  <% end %>
+
+
 </div>
 
