@@ -1,12 +1,18 @@
-<h3>Startups</h3>
-<% startupable.startups.each do |startup| %>
 
-<strong>Company:</strong>
-<%= startup.company %>
 
-<br></br>
-
-<strong>URL:</strong>
-<%= startup.url %>
-<br></br>
-<% end %>
+<table class="table table-striped">
+	 <thead>
+		<tr>
+          <th>Name</th>
+          <th>Url</th>
+        </tr>
+     </thead>
+  <tbody>
+	<% startupable.startups.each do |startup| %>
+	<tr>
+		<td><%= startup.company %></td>
+		<td><%= startup.url %></td>
+	</tr>
+	<% end %>
+ </tbody>	
+</table>
