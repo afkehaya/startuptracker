@@ -3,7 +3,7 @@ class StartupsController < ApplicationController
 
 	def create
 		@startup = @startupable.startups.new startup_params
-		#@startup.user = current_user
+		@startup.user = current_user
 		@startup.save
 		redirect_to @startupable, notice: "Your startup was added succesfully."
 	end
