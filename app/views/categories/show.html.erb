@@ -13,10 +13,12 @@
 
 
 			<div class="panel-footer">
+
 				<% if user_signed_in? %>
-				<%= link_to 'Edit', edit_category_path(@category) %>|
+					<%= link_to 'Edit', edit_category_path(@category) %> |
 				<% end %> 
-				<%= link_to 'Back', categories_path %>
+
+					<%= link_to 'Back', categories_path %>
 			</div>
 
 			
