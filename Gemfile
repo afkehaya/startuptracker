@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.0'
 # Devise for authoriazation
 gem 'devise'
 
+# Pundit for authorizations
+gem "pundit"
+
 # Annotate
 gem 'annotate'
 

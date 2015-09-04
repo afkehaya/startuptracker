@@ -6,6 +6,7 @@ class StartupsController < ApplicationController
 		@startup.user = current_user
 		@startup.save
 		redirect_to @startupable, notice: "Your startup was added succesfully."
+		authorize @startup
 	end
 
 	private

@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    authorize @categories
   end
 
 
@@ -13,6 +14,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = current_user.categories.build
+    authorize @category
   end
 
  
@@ -22,7 +24,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.build(category_params)
-
+    authorize @category
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
@@ -59,6 +61,7 @@ class CategoriesController < ApplicationController
   private
     def set_category
       @category = Category.find(params[:id])
+      authorize @category
     end
     def correct_user
       @category = current_user.categories.find_by(id: params[:id])
