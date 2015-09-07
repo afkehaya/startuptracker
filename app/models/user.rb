@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
 
    has_many :categories
    has_many :startups
+   
+   def admin?
+   	role == "admin"
+   end
+
 end
