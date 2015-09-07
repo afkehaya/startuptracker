@@ -7,7 +7,7 @@ class CategoryPolicy < ApplicationPolicy
 	end
 
 	def update?
-		user.present? && user == category.user || user.admin?
+		return true if user.present? && (user.admin? || category.user)
 	end
 
 	def show?

@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
     authorize @categories
   end
 

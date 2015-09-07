@@ -9,7 +9,9 @@
 			<div class="panel-body">
 				<%= render partial: "startups/startups", locals: {startupable: @category} %>
 			</div>
-
+		<div class="center">
+         
+        </div>
 			<div class="panel-footer">
 				<% if policy(@category).update? %>
 				<%= link_to 'Edit', edit_category_path(@category)  %> |

@@ -30,6 +30,9 @@
             <% end %>
           </tbody>
         </table>
+        <div class="center">
+          <%= will_paginate @categories, renderer: BootstrapPagination::Rails %>
+        </div>
       </div>
 
     <br>

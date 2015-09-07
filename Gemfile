@@ -26,6 +26,9 @@ gem 'devise'
 # Pundit for authorizations
 gem "pundit"
 
+# Pagination with will_paginate
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'	
 # Annotate
 gem 'annotate'
 
