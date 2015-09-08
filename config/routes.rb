@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :categories do
-    resources :startups, module: :categories  
+    resources :startups, module: :categories do
+      collection do
+        post :import
+        end
+      end 
   end 
 
   root :to => 'categories#index'

@@ -9,6 +9,9 @@ class StartupsController < ApplicationController
 		authorize @startup
 	end
 
+	def import
+	end
+
 	private
 
 	def startup_params
