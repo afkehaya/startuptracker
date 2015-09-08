@@ -10,6 +10,9 @@ class StartupsController < ApplicationController
 	end
 
 	def import
+		count = Startup.import params[:file]
+		redirect_to category_startups_path, notice: "Imported #{count} startups"
+		authorize @startup
 	end
 
 	private
