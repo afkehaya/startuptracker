@@ -17,7 +17,6 @@ class CategoryPolicy < ApplicationPolicy
 	def destroy?
 		user.present? && user.admin?
 	end
-
 private
 	def category
 		record

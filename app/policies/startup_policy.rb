@@ -2,7 +2,8 @@ class StartupPolicy < CategoryPolicy
 	def create?
 		user.present?
 	end
+
 	def import?
-	 	true
+	 	user.present?
 	end
 end
