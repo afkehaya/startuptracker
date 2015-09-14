@@ -1,3 +1,4 @@
+<% if policy(Category).user? %>
 <div class="panel panel-default">
     <div class="panel-heading">
       <h1>Outdoor Startup Categories</h1>
@@ -45,7 +46,8 @@
       <%= link_to "Sign up to add your own category", new_user_registration_path %>
     <% end %>  
   </div>
-
-
 </div>
+<% else %>
+  <%= render "landing" %>
+<% end %>
 

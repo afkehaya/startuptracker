@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
     authorize @categories
   end
 
-
   def show
   end
 

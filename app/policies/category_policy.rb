@@ -11,13 +11,16 @@ class CategoryPolicy < ApplicationPolicy
 	end
 
 	def show?
-		true
+		user.present?
 	end
 
 	def destroy?
 		user.present? && user.admin?
 	end
 
+	def user?
+		user.present?
+	end 
 private
 	def category
 		record
