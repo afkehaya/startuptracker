@@ -22,6 +22,12 @@ gem 'jbuilder', '~> 2.0'
 
 # Devise for authoriazation
 gem 'devise'
+# Mandril for mailing users
+gem 'mandrill-api', '~> 1.0.53', require: "mandrill"
+
+# Gibbon for adding users to a mailing list from mailchimp.
+  gem 'gibbon', git: 'git://github.co/amro/gibbon.git'
+
 
 # Pundit for authorizations
 gem "pundit"
