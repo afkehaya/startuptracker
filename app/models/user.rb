@@ -14,17 +14,14 @@ class User < ActiveRecord::Base
    end
    
    def add_to_list
-	  @list_id = "be53fa8a83"
-	  @gb = Gibbon::API.new
-	    @gb.lists.subscribe({
-	    :id => @list_id,
-	    :email => {:email => self.email},
-	    },
-	    :double_optin => false,
-	  })
+	  list_id = "be53fa8a83"
+	  @gb = Gibbon::Request.new
+	  subscribe = @gb.lists(list_id).members.create(body: {
+        email_address: self.email, 
+        status: "subscribed", 
+        double_optin: false
+        })
    end
-
-   end 
    def admin?
    	role == "admin"
    end
