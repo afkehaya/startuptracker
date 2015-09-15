@@ -40,6 +40,9 @@ gem 'annotate'
 
 gem 'bootstrap-sass'
 
+# Active Admin for easy managment of user permissions
+gem 'activeadmin', github: 'activeadmin'
+
 group :development, :test do
      gem 'sqlite3'
 end
