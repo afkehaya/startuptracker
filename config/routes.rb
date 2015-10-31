@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :industries
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
     resources :startups, module: :categories  
   end 
 
-  root :to => 'categories#index'
+  root :to => 'industries#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

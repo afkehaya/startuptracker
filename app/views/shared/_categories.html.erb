@@ -1,7 +1,7 @@
 <% if policy(Category).user? %>
 <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>Outdoor Startup Categories</h1>
+      <h1><%= @industry.name %> Industry</h1>
   </div>
     <div class="panel-body">
         <table class="table table-striped">
@@ -32,7 +32,7 @@
           </tbody>
         </table>
         <div class="center">
-          <%= will_paginate @categories, renderer: BootstrapPagination::Rails %>
+         
         </div>
       </div>
 
