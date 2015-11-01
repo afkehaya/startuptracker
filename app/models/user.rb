@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
    end
    
    def add_to_list
-	  list_id = "be53fa8a83"
+	  list_id = "715a1cd50a"
 	  @gb = Gibbon::Request.new
 	  subscribe = @gb.lists(list_id).members.create(body: {
         email_address: self.email, 

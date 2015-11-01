@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: "no-reply@concept-21.com"
-  default to: "alex@concept-21.com"
+  default from: "no-reply@kehaya.com"
+  default to: "alex@kehaya.com"
 
   def mandrill_client
   	@mandrill_client ||= Mandrill::API.new MANDRILL_API_KEY
