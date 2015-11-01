@@ -1,4 +1,4 @@
-<%= form_for [startupable, Startup.new] do |f| %>
+<%= form_for [@category.industry, startupable, Startup.new] do |f| %>
 	<div class="form-group">
 		<%= f.text_field :company, class: "form-control", placeholder: "Startup Name" %>
 	</div>

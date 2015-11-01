@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html
 
   def index
     @categories = Category.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
@@ -12,7 +12,9 @@ class CategoriesController < ApplicationController
 
 
   def new
-    @category = current_user.categories.build
+    @industry = Industry.find(params[:industry_id])
+    @category = @industry.categories.new
+    flash[:notice] = "Category created."
     authorize @category
   end
 
@@ -22,17 +24,10 @@ class CategoriesController < ApplicationController
 
 
   def create
+    @industry = Industry.find(params[:industry_id])
     @category = current_user.categories.build(category_params)
+    respond_with @industry
     authorize @category
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
-      else
-        format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
 
@@ -51,10 +46,8 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to @industry
+    flash[:notice] = "You have succesfully deleted the category."
   end
 
   private

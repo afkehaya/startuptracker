@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :categories do
-    resources :startups, module: :categories  
-  end 
+  
+  resources :industries , only: [:show, :create, :edit, :update] do
+    resources :categories do
+      resources :startups, module: :categories  
+    end 
+  end
 
   root :to => 'industries#index'
 

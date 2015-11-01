@@ -61,10 +61,10 @@ class IndustriesController < ApplicationController
       @industry = Industry.find(params[:id])
       authorize @industry
     end
-    def correct_user
-      @industry = current_user.industries.find_by(id: params[:id])
-      redirect_to industries_path, notice: "Not authorized to edit this Industry" if @industry.nil?
-    end
+   # def correct_user
+     # @industry = current_user.industries.find_by(id: params[:id])
+      #redirect_to industries_path, notice: "Not authorized to edit this Industry" if @industry.nil?
+   # end
 
     def industry_params
       params.require(:industry).permit(:name)

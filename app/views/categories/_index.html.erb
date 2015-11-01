@@ -19,13 +19,13 @@
                 <td><%= category.name %></td>
                 <td><%= category.startups.count %></td>
                 
-                <td><%= link_to 'View', category, class: "btn btn-default" if policy(category).show? %>
+                <td><%= link_to 'View', [category.industry, category], class: "btn btn-default" if policy(category).show? %>
                   <% if user_signed_in? %>
                   
-                <%= link_to 'Edit', edit_category_path(category), class: "btn btn-default" if policy(category).update? %>
+                <%= link_to 'Edit', edit_industry_category_path(category.industry, category), class: "btn btn-default" if policy(category).update? %>
               
                 
-                <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" if policy(category).destroy?  %></td>
+                <%= link_to 'Destroy', [category.industry, category], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" if policy(category).destroy?  %></td>
               </tr>
               <% end %>
             <% end %>
@@ -41,7 +41,7 @@
 
   <div class="panel-footer">
     <% if user_signed_in? %>
-      <%= link_to 'New Category', new_category_path, class: "btn btn-primary" if policy(Category).new? %>
+      <%= link_to 'New Category', new_industry_category_path(@industry), class: "btn btn-primary" if policy(Category).new? %>
         <% else %>
       <%= link_to "Sign up to add your own category", new_user_registration_path %>
     <% end %>  
