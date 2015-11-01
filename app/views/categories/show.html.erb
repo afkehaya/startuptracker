@@ -2,7 +2,7 @@
 
 		<div class="panel panel-default">
 		    <div class="panel-heading">
-		  		<h3><%= @category.name %></h3>
+		  		<%= @category.name %>
 		  		<h4>Number of startups: <%= @category.startups.count %></h4>
 			</div>
 
@@ -17,11 +17,13 @@
 				<%= link_to 'Edit', edit_industry_category_path(@category.industry, @category)  %> |
 				<% end %>
 
-				<%= link_to 'Back', @category.industry %>
+				<a href="mailto:alex@kehaya.com">Want to add your startup? Contact me for access.</a>
+				
 			</div>
-
-			
+	
 		</div>
+		<%= link_to 'Back', @category.industry %>
+
 	<% if user_signed_in? %>
 		<%= render partial: "startups/form", locals: {startupable: @category} %>
 	<% end %>

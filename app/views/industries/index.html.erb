@@ -24,7 +24,7 @@
 
                <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-default" if policy(industry).update? %>
 
-                <%= link_to 'Destroy', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  if policy(industry).destroy? %></td>
+                <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  if policy(industry).destroy? %></td>
               </tr>
             <% end %>
           </tbody>
@@ -32,7 +32,12 @@
       </div>
 
     <br>
+
   <div class="panel-footer">
+    <% if user_signed_in? %>
     <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" if policy(Industry).new? %>
+    <% else %>
+    <% end %>
+    <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
   </div>
 </div>

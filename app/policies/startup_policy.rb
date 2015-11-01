@@ -1,6 +1,6 @@
 class StartupPolicy < CategoryPolicy
 	def create?
-		user.present?
+		user.present? && user.admin?
 	end
 
 	def show?
