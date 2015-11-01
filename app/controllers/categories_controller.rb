@@ -25,7 +25,8 @@ class CategoriesController < ApplicationController
 
   def create
     @industry = Industry.find(params[:industry_id])
-    @category = current_user.categories.build(category_params)
+    @category = @industry.categories.new(category_params)
+    @category.save
     respond_with @industry
     authorize @category
   end
@@ -53,6 +54,7 @@ class CategoriesController < ApplicationController
   private
     def set_category
       @category = Category.find(params[:id])
+      @industry = Industry.find(params[:industry_id])
       authorize @category
     end
     def correct_user
