@@ -35,9 +35,15 @@
 
   <div class="panel-footer">
     <% if user_signed_in? %>
-    <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" if policy(Industry).new? %>
+      <% if policy(Industry).new? %>
+      <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" %>
+      <% else %>
+       <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
+       <% end%>
+
     <% else %>
+       <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
     <% end %>
-    <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
+   
   </div>
 </div>
