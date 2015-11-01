@@ -14,7 +14,6 @@ class CategoriesController < ApplicationController
   def new
     @industry = Industry.find(params[:industry_id])
     @category = @industry.categories.new
-    flash[:notice] = "Category created."
     authorize @category
   end
 

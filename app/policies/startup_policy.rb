@@ -4,6 +4,6 @@ class StartupPolicy < CategoryPolicy
 	end
 
 	def show?
-		true
+		user.present?
 	end
 end

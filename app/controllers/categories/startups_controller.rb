@@ -1,14 +1,13 @@
 class Categories::StartupsController < StartupsController
 before_action :set_startupable
 	def show
-	
 	end
 
 	def create
 		@startup = @startupable.startups.new startup_params
 		@startup.user = current_user
 		@startup.save
-		redirect_to industry_category_path(id: @startupable.id), notice: "Your startup was added successfully."
+		redirect_to industry_category_path(id: @startupable.id)
 		authorize @startup
 	end
 

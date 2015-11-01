@@ -5,7 +5,7 @@ class StartupsController < ApplicationController
 		@startup = @startupable.startups.new startup_params
 		@startup.user = current_user
 		@startup.save
-		redirect_to @startupable, notice: "Your startup was added successfully."
+		redirect_to industry_category_path(id: @startupable.id)
 		authorize @startup
 	end
 

@@ -1,25 +1,38 @@
-<h1>Listing industries</h1>
+<div class="panel panel-default">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="panel-heading">
+        <h1>Industries</h1>
+    </div>
 
-  <tbody>
-    <% @industries.each do |industry| %>
-      <tr>
-        <td><%= industry.name %></td>
-        <td><%= link_to 'Show', industry %></td>
-        <td><%= link_to 'Edit', edit_industry_path(industry) %></td>
-        <td><%= link_to 'Destroy', industry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of categories</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
 
-<br>
+          <tbody>
+            <% @industries.each do |industry| %>
+              <tr>
+                <td><%= industry.name %></td>
+                <td><%= industry.categories.count %></td>
 
-<%= link_to 'New Industry', new_industry_path %>
+                <td><%= link_to 'View', industry, class: "btn btn-default" if policy(industry).show? %>
+
+               <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-default" if policy(industry).update? %>
+
+                <%= link_to 'Destroy', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  if policy(industry).destroy? %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+    <br>
+  <div class="panel-footer">
+    <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" if policy(Industry).new? %>
+  </div>
+</div>

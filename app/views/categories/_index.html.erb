@@ -1,7 +1,7 @@
-<% if policy(Category).user? %>
+
 <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>Outdoor Startup Categories</h1>
+      <h1>Industry: <%= @industry.name %></h1>
   </div>
     <div class="panel-body">
         <table class="table table-striped">
@@ -47,7 +47,6 @@
     <% end %>  
   </div>
 </div>
-<% else %>
-  <%= render "landing" %>
-<% end %>
+
+
 

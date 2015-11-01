@@ -3,15 +3,15 @@ class IndustryPolicy < ApplicationPolicy
 		true
 	end
 	def create?
-		user.present?
+		user.present? && user.admin?
 	end
 
 	def update?
-		return true if user.present? && (user.admin? || category.user)
+		user.present? && user.admin?
 	end
 
 	def show?
-		user.present?
+		true
 	end
 
 	def destroy?
