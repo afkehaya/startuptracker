@@ -1,10 +1,10 @@
-<div class="panel panel-default">
+<div class="box">
 
-    <div class="panel-heading">
+    
         <h1>Industries</h1>
-    </div>
 
-      <div class="panel-body">
+
+      
         <table class="table table-striped">
           <thead>
             <tr>
@@ -29,11 +29,11 @@
             <% end %>
           </tbody>
         </table>
-      </div>
+      
 
     <br>
 
-  <div class="panel-footer">
+
     <% if user_signed_in? %>
       <% if policy(Industry).new? %>
       <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" %>
@@ -45,5 +45,4 @@
        <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
     <% end %>
    
-  </div>
 </div>

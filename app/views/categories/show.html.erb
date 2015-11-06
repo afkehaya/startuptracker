@@ -1,28 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-		<div class="panel panel-default">
-		    <div class="panel-heading">
-		  		<h3><%= @category.name %></h3>
-		  		<h4>Number of startups: <%= @category.startups.count %></h4>
-			</div>
+<div class="box">
+		<h3><%= @category.name %></h3>
+		<h4>Number of startups: <%= @category.startups.count %></h4>
 
-			<div class="panel-body">
-				<%= render partial: "startups/startups", locals: {startupable: @category} %>
-			</div>
-		<div class="center">
-         
-        </div>
-			<div class="panel-footer">
-				<% if policy(@category).update? %>
-				<%= link_to 'Edit', edit_industry_category_path(@category.industry, @category)  %> | <%= link_to 'Back', @category.industry %>
-				
-				<% else %>
-				<a href="mailto:alex@kehaya.com">Want to add your startup? Contact me for access.</a>
-				<% end %>
-			</div>
+	<%= render partial: "startups/startups", locals: {startupable: @category} %>
+
+
+
+	<% if policy(@category).update? %>
+	<%= link_to 'Edit', edit_industry_category_path(@category.industry, @category)  %> | <%= link_to 'Back', @category.industry %>
 	
-		</div>
-		
+	<% else %>
+	<a href="mailto:alex@kehaya.com">Want to add your startup? Contact me for access.</a>
+	<% end %>
+</div>
+
+<br>
 
 	<% if user_signed_in? %>
 		<%= render partial: "startups/form", locals: {startupable: @category} %>

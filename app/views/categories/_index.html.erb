@@ -1,9 +1,7 @@
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-      <h1>Industry: <%= @industry.name %></h1>
-  </div>
-    <div class="panel-body">
+
+   
+      <h1><%= @industry.name %></h1>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -31,15 +29,11 @@
             <% end %>
           </tbody>
         </table>
-        <div class="center">
-          
-        </div>
-      </div>
+       
+   
 
     <br>
 
-
-  <div class="panel-footer">
     <% if user_signed_in? %>
       <% if policy(Category).new? %>
       <%= link_to 'New Category', new_industry_category_path(@industry), class: "btn btn-primary" %>
@@ -52,8 +46,7 @@
        <a href="mailto:alex@kehaya.com">Want to add your category? Contact me for access.</a>
     <% end %>  
     
-  </div>
-</div>
+
 
 
 
