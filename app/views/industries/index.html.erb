@@ -10,7 +10,9 @@
             <tr>
               <th>Name</th>
               <th>Number of categories</th>
+              <th>Moderator</th>
               <th>Actions</th>
+             
             </tr>
           </thead>
 
@@ -19,6 +21,7 @@
               <tr>
                 <td><%= industry.name %></td>
                 <td><%= industry.categories.count %></td>
+                <td><%= industry.user.name %></td>
 
                 <td><%= link_to 'View', industry, class: "btn btn-default" if policy(industry).show? %>
 
