@@ -3,11 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+   
    before_create :add_to_list
    has_many :categories
    has_many :startups
    after_create :send_notification
    
+   validates :name, presence: true
 
    def send_notification
    	UserMailer.new_user(self).deliver
