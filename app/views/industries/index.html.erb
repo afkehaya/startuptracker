@@ -21,7 +21,7 @@
               <tr>
                 <td><%= industry.name %></td>
                 <td><%= industry.categories.count %></td>
-                <td><%= industry.user.name %></td>
+               
 
                 <td><%= link_to 'View', industry, class: "btn btn-default" if policy(industry).show? %>
 
@@ -29,14 +29,13 @@
 
                 <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  if policy(industry).destroy? %></td>
               </tr>
+           
             <% end %>
           </tbody>
         </table>
       
 
     <br>
-
-
     <% if user_signed_in? %>
       <% if policy(Industry).new? %>
       <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" %>
@@ -47,5 +46,8 @@
     <% else %>
        <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
     <% end %>
-   
+
+     <div>
+        <%= will_paginate @industries, renderer: BootstrapPagination::Rails %>
+    </div>   
 </div>

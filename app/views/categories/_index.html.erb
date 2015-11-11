@@ -18,7 +18,8 @@
                 <td><%= category.startups.count %></td>
                 
                 <td><%= link_to 'View', [category.industry, category], class: "btn btn-default" if policy(category).show? %>
-                  <% if user_signed_in? %>
+
+              <% if user_signed_in? %>
                   
                 <%= link_to 'Edit', edit_industry_category_path(category.industry, category), class: "btn btn-default" if policy(category).update? %>
               
@@ -27,6 +28,7 @@
               </tr>
               <% end %>
             <% end %>
+            
           </tbody>
         </table>
        
