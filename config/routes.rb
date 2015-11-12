@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   
-  resources :industries
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
+
+  resources :industries 
   
   resources :industries , only: [:show, :create, :edit, :update] do
+    collection do 
+      get :autocomplete
+    end
     resources :categories do
       resources :startups, module: :categories  
     end 

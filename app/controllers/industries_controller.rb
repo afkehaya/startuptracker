@@ -2,7 +2,8 @@ class IndustriesController < ApplicationController
   before_action :set_industry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @industries = Industry.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    query = params[:q].presence || "*"
+    @industries = Industry.search(query)
     authorize @industries
   end
 
@@ -14,7 +15,6 @@ class IndustriesController < ApplicationController
     @industry = Industry.new
     authorize @industry
   end
-
  
   def edit
   end
@@ -56,6 +56,9 @@ class IndustriesController < ApplicationController
     end
   end
 
+  def autocomplete
+    render json: ["TEST"]
+  end
   private
     def set_industry
       @industry = Industry.find(params[:id])

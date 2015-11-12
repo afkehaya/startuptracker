@@ -218,7 +218,8 @@ DEPENDENCIES
   devise
   gibbon (~> 2.0.0)
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (~> 3.1.3)
+  jquery-ui-rails
   mandrill-api (~> 1.0.53)
   pg
   pundit
