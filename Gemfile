@@ -40,6 +40,9 @@ gem 'annotate'
 
 gem 'bootstrap-sass'
 
+#Search Kick for search
+gem 'searchkick'
+
 # Active Admin for easy managment of user permissions
 gem 'activeadmin', github: 'activeadmin'
 
