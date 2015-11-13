@@ -59,6 +59,7 @@ class IndustriesController < ApplicationController
   def autocomplete
     render json: ["TEST"]
   end
+  
   private
     def set_industry
       @industry = Industry.find(params[:id])
