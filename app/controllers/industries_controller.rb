@@ -11,7 +11,7 @@ class IndustriesController < ApplicationController
   end
 
   def new
-    @industry = Industry.new
+    @industry = current_user.industries.build
     authorize @industry
   end
 
@@ -21,7 +21,7 @@ class IndustriesController < ApplicationController
 
 
   def create
-    @industry = Industry.new(industry_params)
+    @industry = current_user.industries.build(industry_params)
     authorize @industry
     respond_to do |format|
       if @industry.save
