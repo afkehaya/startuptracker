@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  resources :industries 
-  
-  resources :industries , only: [:show, :create, :edit, :update] do
+  resources :industries  do
     collection do 
       get :autocomplete
     end
+  end
+  
+  resources :industries , only: [:show, :create, :edit, :update] do
+    
     resources :categories do
       resources :startups, module: :categories  
     end 
