@@ -21,7 +21,7 @@
               <tr>
                 <td><%= industry.name %></td>
                 <td><%= industry.categories.count %></td>
-                <td><%= industry.user.name %></td>
+                <td><%= industry.user.name if industry.user %></td>
 
                 <td><%= link_to 'View', industry, class: "btn btn-default" if policy(industry).show? %>
 

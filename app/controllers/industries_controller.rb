@@ -2,7 +2,7 @@ class IndustriesController < ApplicationController
   before_action :set_industry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @industries = Industry.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    @industries = Industry.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
     authorize @industries
   end
 
@@ -11,7 +11,7 @@ class IndustriesController < ApplicationController
   end
 
   def new
-    @industry = current_user.industries.build
+    @industry = Industry.new
     authorize @industry
   end
 
@@ -21,8 +21,9 @@ class IndustriesController < ApplicationController
 
 
   def create
-    @industry = current_user.industries.build(industry_params)
+    @industry = Industry.new(industry_params)
     authorize @industry
+    @industry.user = current_user
     respond_to do |format|
       if @industry.save
         format.html { redirect_to @industry, notice: 'industry was successfully created.' }
