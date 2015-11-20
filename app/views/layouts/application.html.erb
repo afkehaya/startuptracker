@@ -12,7 +12,7 @@
 
 <body>
 	<% flash.each do |name, msg| %>
-     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+     <%= content_tag(:div, msg, class: "alert alert-dismissible alert-success alert-#{name}") %>
 <% end %>
 	
 	<div class="container">

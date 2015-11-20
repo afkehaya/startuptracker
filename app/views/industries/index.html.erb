@@ -23,11 +23,11 @@
                 <td><%= industry.categories.count %></td>
                 <td><%= industry.user.name if industry.user %></td>
 
-                <td><%= link_to 'View', industry, class: "btn btn-default" if policy(industry).show? %>
+                <td><%= link_to 'View', industry, class: "btn btn-success" if policy(industry).show? %>
 
-               <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-default" if policy(industry).update? %>
+               <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-primary" if policy(industry).update? %>
 
-                <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  if policy(industry).destroy? %></td>
+                <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  if policy(industry).destroy? %></td>
               </tr>
             <% end %>
           </tbody>

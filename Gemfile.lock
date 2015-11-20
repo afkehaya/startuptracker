@@ -55,6 +55,8 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
+    bootstrap-material-design (0.2.2)
+      bootstrap-sass (~> 3.0)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -200,6 +202,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   annotate
+  bootstrap-material-design
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise

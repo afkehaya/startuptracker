@@ -39,6 +39,7 @@ gem 'will_paginate-bootstrap'
 gem 'annotate'
 
 gem 'bootstrap-sass'
+gem 'bootstrap-material-design'
 
 # Active Admin for easy managment of user permissions
 gem 'activeadmin', github: 'activeadmin'
