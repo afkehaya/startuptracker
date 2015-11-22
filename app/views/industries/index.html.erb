@@ -1,10 +1,8 @@
+<div class="container">
 <div class="box">
-
     
         <h1>Industries</h1>
 
-
-      
         <table class="table table-striped">
           <thead>
             <tr>
@@ -23,11 +21,17 @@
                 <td><%= industry.categories.count %></td>
                 <td><%= industry.user.name if industry.user %></td>
 
-                <td><%= link_to 'View', industry, class: "btn btn-success" if policy(industry).show? %>
-
-               <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-primary" if policy(industry).update? %>
-
-                <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  if policy(industry).destroy? %></td>
+                <td>
+                  <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Actions
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><%= link_to 'View', industry, class: "btn btn-success" if policy(industry).show? %></li>
+                        <li> <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-primary" if policy(industry).update? %></a></li>
+                        <li><%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  if policy(industry).destroy? %></li>
+                      </ul>
+                    </div>
               </tr>
             <% end %>
           </tbody>
@@ -48,4 +52,5 @@
        <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
     <% end %>
    
+</div>
 </div>
