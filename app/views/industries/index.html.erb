@@ -1,27 +1,17 @@
-<div class="container">
+
 <div class="box">
     
         <h1>Industries</h1>
 
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number of categories</th>
-              <th>Contributer</th>
-              <th>Actions</th>
-             
-            </tr>
-          </thead>
-
-          <tbody>
+  
             <% @industries.each do |industry| %>
-              <tr>
-                <td><%= industry.name %></td>
-                <td><%= industry.categories.count %></td>
-                <td><%= industry.user.name if industry.user %></td>
-
-                <td>
+             <div class="row">
+                <div class="col-xs-6">
+                  <%= industry.name %>
+                  <%= industry.categories.count %>
+                  <%= industry.user.name if industry.user %>
+                </div>
+                <div class="col-xs-6">
                   <div class="dropdown">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Actions
                         <span class="caret"></span>
@@ -32,11 +22,9 @@
                         <li><%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  if policy(industry).destroy? %></li>
                       </ul>
                     </div>
-              </tr>
+                  </div>
+               </div>
             <% end %>
-          </tbody>
-        </table>
-      
 
     <br>
 
@@ -53,4 +41,4 @@
     <% end %>
    
 </div>
-</div>
+
