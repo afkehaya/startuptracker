@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
 
- 
+  get "about" => "application#about"
 
   root :to => 'industries#index'
 
