@@ -15,16 +15,18 @@
             <td>
               <ul>
                 <ol><strong>Industry:</strong> <%= industry.name %></ol>
-                <ol><strong>Category:</strong> <%= industry.categories.count %></ol> 
+                <ol><strong>Categories:</strong> <%= industry.categories.count %></ol> 
                 <ol><strong>Owner:</strong> <%= industry.user.name if industry.user %></ol>
               </ul>
             </td> 
 
             <td>
             <%= link_to 'View', industry, class: "btn btn-xs btn-success" if policy(industry).show? %>
+            <% if industry.user === current_user %>
             <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-xs btn-primary" if policy(industry).update? %></a>
             <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  if policy(industry).destroy? %>
             </td>
+            <% end %>
           </tr>
               
           <% end %>

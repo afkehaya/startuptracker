@@ -15,7 +15,7 @@ class IndustryPolicy < ApplicationPolicy
 	end
 
 	def destroy?
-		user.present? && user.admin?
+		user.present? && user.admin? 
 	end
 
 	def user?
