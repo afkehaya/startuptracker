@@ -1,30 +1,36 @@
 
 <div class="box">
-    
-        <h1>Industries</h1>
 
-  
-            <% @industries.each do |industry| %>
-             <div class="row">
-                <div class="col-xs-6">
-                  <%= industry.name %>
-                  <%= industry.categories.count %>
-                  <%= industry.user.name if industry.user %>
-                </div>
-                <div class="col-xs-6">
-                  <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Actions
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><%= link_to 'View', industry, class: "btn btn-success" if policy(industry).show? %></li>
-                        <li> <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-primary" if policy(industry).update? %></a></li>
-                        <li><%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  if policy(industry).destroy? %></li>
-                      </ul>
-                    </div>
-                  </div>
-               </div>
-            <% end %>
+    <h1>Industries</h1>
+
+    <table class="table table-striped">
+        <thead>
+          <th></th>
+          <th></th>
+        </thead>
+
+        <tbody>
+          <% @industries.each do |industry| %>
+          <tr>
+            <td>
+              <ul>
+                <ol><strong>Industry:</strong> <%= industry.name %></ol>
+                <ol><strong>Category:</strong> <%= industry.categories.count %></ol> 
+                <ol><strong>Owner:</strong> <%= industry.user.name if industry.user %></ol>
+              </ul>
+            </td> 
+
+            <td>
+            <%= link_to 'View', industry, class: "btn btn-xs btn-success" if policy(industry).show? %>
+            <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-xs btn-primary" if policy(industry).update? %></a>
+            <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  if policy(industry).destroy? %>
+            </td>
+          </tr>
+              
+          <% end %>
+       </tbody>
+     </thead>
+   </table>
 
     <br>
 
@@ -39,6 +45,7 @@
     <% else %>
        <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
     <% end %>
+ 
    
 </div>
 

@@ -28,7 +28,6 @@ gem 'mandrill-api', '~> 1.0.53', require: "mandrill"
 # Gibbon for adding users to a mailing list from mailchimp.
 gem 'gibbon', '~> 2.0.0'
 
-
 # Pundit for authorizations
 gem "pundit"
 
