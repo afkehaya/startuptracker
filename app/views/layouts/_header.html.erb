@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-   <%= link_to "Rival DB", root_path, class: "navbar-brand" %>
+   <%= link_to "UpBase", root_path, class: "navbar-brand" %>
     <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control col-lg-8" placeholder="Search">
@@ -20,7 +20,7 @@
     <ul class="nav navbar-nav navbar-right">
 
          <li><%= link_to "Home", root_path, class: "navbar-brand" %></li>
-
+         <li><%= link_to "About", about_path, class: "navbar-brand" %></li>
          <% if user_signed_in? %>
          
          <li> <%= link_to "Account", edit_user_registration_path, class: "navbar-brand" %></li>
