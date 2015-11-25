@@ -15,13 +15,13 @@
                 <td><%= category.name %></td>
                 <td><%= category.startups.count %></td>
                 
-                <td><%= link_to 'View', [category.industry, category], class: "btn btn-success" if policy(category).show? %>
+                <td><%= link_to 'View', [category.industry, category], class: "btn btn-xs btn-success" if policy(category).show? %>
                   <% if user_signed_in? %>
                   
-                <%= link_to 'Edit', edit_industry_category_path(category.industry, category), class: "btn btn-primary" if policy(category).update? %>
+                <%= link_to 'Edit', edit_industry_category_path(category.industry, category), class: "btn btn-xs btn-primary" if policy(category).update? %>
               
                 
-                <%= link_to 'Delete', [category.industry, category], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" if policy(category).destroy?  %></td>
+                <%= link_to 'Delete', [category.industry, category], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" if policy(category).destroy?  %></td>
               </tr>
               <% end %>
             <% end %>

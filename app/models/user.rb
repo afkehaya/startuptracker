@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
    
-   #before_create :add_to_list
+   before_create :add_to_list
    has_many :industries
    has_many :categories
    has_many :startups
