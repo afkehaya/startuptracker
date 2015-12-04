@@ -38,8 +38,9 @@
               
           <% end %>
        </tbody>
-     </thead>
    </table>
+
+     <%= will_paginate @industry, renderer: BootstrapPagination::Rails %>
 
     <br>
 

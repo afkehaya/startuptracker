@@ -2,12 +2,12 @@ class IndustriesController < ApplicationController
   before_action :set_industry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @industries = Industry.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+    @industries = Industry.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
     authorize @industries
   end
 
   def show
-  	@categories = @industry.categories
+  	@categories = @industry.categories.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   def new

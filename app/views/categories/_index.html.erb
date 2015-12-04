@@ -26,6 +26,7 @@
               <% end %>
             <% end %>
           </tbody>
+          <%= will_paginate @categories , renderer: BootstrapPagination::Rails %>
         </table>
       </div>
        
