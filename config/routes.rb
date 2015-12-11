@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :submissions
+
   resources :industries
 
   devise_for :admin_users, ActiveAdmin::Devise.config
