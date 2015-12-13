@@ -11,7 +11,7 @@ class SubmissionPolicy < ApplicationPolicy
 	end
 
 	def show?
-		user.present? 
+		true
 	end
 
 	def destroy?

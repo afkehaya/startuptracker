@@ -1,27 +1,27 @@
 <div class="box">
   <h1>Listing submissions</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Business</th>
-        <th>Description</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+
 
     <tbody>
       <% @submissions.each do |submission| %>
-        <tr>
-          <td><%= submission.business %></td>
-          <td><%= submission.description %></td>
-          <td><%= link_to 'Show', submission %></td>
-          <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
-          <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <div class="submission">
+          <h3><%= submission.user.name %></h3>
+          <h3><%= submission.user.email %></h3>
+
+          <h3><%= submission.business %></h3>
+          <%= link_to 'Show', submission %>
+          <%= link_to 'Edit', edit_submission_path(submission) %>
+          <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <p><%= submission.description %></p>
+        
+
+         
+
+        </div>
+
       <% end %>
-    </tbody>
-  </table>
+    
 
   <br>
 

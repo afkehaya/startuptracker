@@ -26,7 +26,7 @@ class IndustriesController < ApplicationController
     @industry.user = current_user
     respond_to do |format|
       if @industry.save
-        format.html { redirect_to @industry, notice: 'industry was successfully created.' }
+        format.html { redirect_to @industry, notice: 'Industry was successfully created.' }
         format.json { render :show, status: :created, location: @industry }
       else
         format.html { render :new }

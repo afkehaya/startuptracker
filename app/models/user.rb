@@ -5,10 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
    
    before_create :add_to_list
+
    has_many :industries
    has_many :categories
    has_many :startups
    has_many :submissions
+   
    after_create :send_notification
    
    validates :name, presence: true

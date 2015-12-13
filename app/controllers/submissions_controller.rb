@@ -7,7 +7,6 @@ class SubmissionsController < InheritedResources::Base
   end
 
   def show
-  	@categories = @submission.categories
   end
 
   def new
@@ -64,7 +63,7 @@ class SubmissionsController < InheritedResources::Base
     end
 
     def submission_params
-      params.require(:submission).permit(:name)
+      params.require(:submission).permit(:business, :description, :user_id)
     end
 end
 

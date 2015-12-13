@@ -1,6 +1,10 @@
 <div class="box">
-	<p id="notice"><%= notice %></p>
 
+	<p>
+	  <strong>User:</strong>
+	  <%= @submission.user.name %>
+	  <%= @submission.user.email %>
+	</p>
 	<p>
 	  <strong>Business:</strong>
 	  <%= @submission.business %>
