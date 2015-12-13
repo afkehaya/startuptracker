@@ -1,59 +1,63 @@
 
-<div class="box text-center">
-  <h1>Looking for a startup's competition?</h1>
-  <h4>We do the research for you!</h4>
-
-  <%= link_to "Get your first search free!", new_user_registration_path, class: "btn btn-lg btn-danger" %>
-  
-  <h1>How it works.</h1>
-
-  <div class="row"> 
-    <div class="col-md-6">
-    </div> 
-
-    <div class="col-md-6">
-      <h3>1. Describe what industry you're in.</h3>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h3>2. Tell us about your startup. </h3>
-      </div>
-      <div class="col-md-6">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-      </div>
-      <div class="col-md-6">
-        <h3>3. Our professional researchers get to work. </h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h3>4. We send you a list of the competitors in your industry with in 24 hours.</h3>
-      </div>
-      <div class="col-md-6">
-      </div>
-  </div>
+  <div class="jumbotron">
+    <h1>Looking for a startup's competition?</h1>
+    <h4>We'll do the research for you!</h4>
+    
 
 
-    <% @industries.each do |industry| %>
-       <h3> Checkout the competitors for the outdoor industry <%= industry.name %> </h3>
-     
-      <%= link_to 'See Our Demo List', industry, class: "btn btn-lg btn-success" if policy(industry).show? %>
-      <% if industry.user === current_user %>
-      <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-xs btn-primary" if policy(industry).update? %></a>
-      <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  if policy(industry).destroy? %>
-      
-      <% end %> 
-        
-    <% end %>
+
+     <% if policy(Industry).new? %>
+      <% else %>
+       <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
+      <% end %>
+
+
+ 
+    <table class="table table-striped">
+        <thead>
+          <th></th>
+          <th></th>
+        </thead>
+
+        <tbody>
+          <% @industries.each do |industry| %>
+          <tr>
+            <td>
+              <ul>
+                <ol><strong>Industry:</strong> <%= industry.name %></ol>
+                <ol><strong>Categories:</strong> <%= industry.categories.count %></ol> 
+                <ol><strong>Owner:</strong> <%= industry.user.name if industry.user %></ol>
+              </ul>
+            </td> 
+
+            <td>
+            <%= link_to 'View', industry, class: "btn btn-xs btn-success" if policy(industry).show? %>
+            <% if industry.user === current_user %>
+            <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-xs btn-primary" if policy(industry).update? %></a>
+            <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  if policy(industry).destroy? %>
+            </td>
+            <% end %>
+          </tr>
+              
+          <% end %>
+       </tbody>
+     </thead>
+   </table>
 
     <br>
 
+
+    <% if user_signed_in? %>
       <% if policy(Industry).new? %>
       <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" %>
+      <% else %>
+       <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
        <% end%>
+
+    <% else %>
+       <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
+    <% end %>
  
+   
 </div>
 

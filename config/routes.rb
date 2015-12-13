@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end 
   end
 
-
+  get "home" => "application#home"
   get "about" => "application#about"
 
   root :to => 'industries#index'

@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
   def about
     authorize :application, :about?
   end 
+  def home
+    authorize :application, :home?
+  end
+
   private
 
   def user_not_authorized(exception)

@@ -29,6 +29,9 @@ class ApplicationPolicy
   def edit?
     update?
   end
+  def home?
+    true 
+  end
   def about?
     true
   end

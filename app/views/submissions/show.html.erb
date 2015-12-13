@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="box">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Business:</strong>
-  <%= @submission.business %>
-</p>
+	<p>
+	  <strong>Business:</strong>
+	  <%= @submission.business %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @submission.description %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @submission.description %>
+	</p>
 
-<%= link_to 'Edit', edit_submission_path(@submission) %> |
-<%= link_to 'Back', submissions_path %>
+	<%= link_to 'Edit', edit_submission_path(@submission) %> |
+	<%= link_to 'Back', submissions_path %>
+</div>
