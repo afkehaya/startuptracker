@@ -1,10 +1,25 @@
 <div class="box">
       <h2>Sign up</h2>
 
-
-
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
+     
+      <%= nested_form_for @submission do |f| %>
+        <% f.fields_for :subission do |submission_form| %>
+          <div class="form-group">
+            <%= submission_form.label :business %>
+            <%= submission_form.text_field :business %>
+          </div>
+
+          <div class="form-group">
+            <%= submission_form.label :description %>
+            <%= submission_form.text_area :description %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <br>
+
       <div class="from-group">
         <%= f.label :name %><br />
         <%= f.text_field :name, class: "form-control", :autofocus => true  %>

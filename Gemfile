@@ -31,6 +31,8 @@ gem 'gibbon', '~> 2.0.0'
 # Pundit for authorizations
 gem "pundit"
 
+gem "nested_form"
+
 # Pagination with will_paginate
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'	
