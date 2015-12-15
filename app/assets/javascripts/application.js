@@ -17,3 +17,11 @@
 //= require bootstrap-material-design
 //= require turbolinks
 //= require_tree .
+$(document).ready(function () {
+	$("#hide").click(function(){
+	    $(".submit").hide("fast");
+	});
+	$("#hide").click(function(){
+	    $("#next").removeClass("hide");
+	});
+});

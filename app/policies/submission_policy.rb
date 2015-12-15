@@ -1,6 +1,6 @@
 class SubmissionPolicy < ApplicationPolicy
 	def index?
-		true
+		user.present? && user.admin?
 	end
 	def create?
 		true
@@ -11,16 +11,13 @@ class SubmissionPolicy < ApplicationPolicy
 	end
 
 	def show?
-		true
+		user.present? || user.admin?
 	end
 
 	def destroy?
 		user.present? && user.admin? 
 	end
 
-	def user?
-		user.present?
-	end 
 private
 	def category
 		record

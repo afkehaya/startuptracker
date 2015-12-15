@@ -1,11 +1,13 @@
 
 <div class="box text-center">
+  <% if user_signed_in? %>
+  <h1>Research another startup.</h1>
+  <%= link_to "Get Your Research", new_submission_path, class: "btn btn-lg btn-success" %>
+  <% else %>
   <h1>Looking for a startup's competition?</h1>
   <h4>We do the research for you!</h4>
 
   <%= link_to "Get your first search for just $9.99", new_user_registration_path, class: "btn btn-lg btn-danger" %>
-  
-  
-
+  <% end %>
 </div>
 
