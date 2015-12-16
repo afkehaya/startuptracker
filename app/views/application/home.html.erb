@@ -9,16 +9,20 @@
   </div>
 
   <% else %>
-  <div class="text-center">
-  	<h1>Looking for a startup's competition?</h1>
-  	<h4>We do the research for you!</h4>
+	<div class="bgimage">
+		<div class="text-center landing">
+	  	<h1>Looking for a startup's competition?</h1>
+	  	<h4>We do the research for you and send you a list!</h4>
 
-  <%= link_to "Get your first search for just $9.99", new_user_registration_path, class: "btn btn-lg btn-danger" %>
-
-  	<div class="jumbotron">
+	  <%= link_to "Get your first search for just $9.99", new_user_registration_path, class: "btn btn-lg btn-danger" %>
+	</div>
+	</div>
+<div class="container">
+  	<div class="jumbotron text-center">
   		<%= render 'industries/demo' %>
 	</div>
   </div>
+</div>
 
   <% end %>
 
