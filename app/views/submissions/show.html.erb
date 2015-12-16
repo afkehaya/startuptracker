@@ -1,20 +1,22 @@
-<div class="box">
+<div class="container">
+	<div class="box">
 
-	<p>
-	  <strong>User:</strong>
-	  <%= @submission.user.name %>
-	  <%= @submission.user.email %>
-	</p>
-	<p>
-	  <strong>Business:</strong>
-	  <%= @submission.business %>
-	</p>
+		<p>
+		  <strong>User:</strong>
+		  <%= @submission.user.name %>
+		  <%= @submission.user.email %>
+		</p>
+		<p>
+		  <strong>Business:</strong>
+		  <%= @submission.business %>
+		</p>
 
-	<p>
-	  <strong>Description:</strong>
-	  <%= @submission.description %>
-	</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @submission.description %>
+		</p>
 
-	<%= link_to 'Edit', edit_submission_path(@submission) %> |
-	<%= link_to 'Back', submissions_path %>
+		<%= link_to 'Edit', edit_submission_path(@submission) %> |
+		<%= link_to 'Back', submissions_path %>
+	</div>
 </div>

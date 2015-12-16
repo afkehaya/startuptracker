@@ -1,8 +1,10 @@
-<div class="box">
-<p>
-  <%= render "categories/index" , :categories => @categories %>
-</p>
+<div class="container">
+	<div class="box">
+		<p>
+		  <%= render "categories/index" , :categories => @categories %>
+		</p>
 
-<%= link_to 'Edit', edit_industry_path(@industry) %> |
-<%= link_to 'Back', industries_path %>
+		<%= link_to 'Edit', edit_industry_path(@industry) %> |
+		<%= link_to 'Back', industries_path %>
+	</div>
 </div>

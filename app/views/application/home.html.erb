@@ -1,12 +1,14 @@
 
 
   <% if user_signed_in? %>
-
-  <div class="box text-center">
-  	<h1>Research another startup.</h1>
-  	<%= link_to "Get Your Research", new_submission_path, class: "btn btn-lg btn-success" %>
-  	
-  </div>
+    
+    <div class="container">
+      <div class="box text-center">
+      	<h1>Research another startup.</h1>
+      	<%= link_to "Get Your Research", new_submission_path, class: "btn btn-lg btn-success" %>
+      	
+      </div>
+    </div>
 
   <% else %>
 	<div class="bgimage">
@@ -21,8 +23,8 @@
   	<div class="jumbotron text-center">
   		<%= render 'industries/demo' %>
 	</div>
-  </div>
-</div>
+ </div>
+</div> <!-- end of image background div -->
 
   <% end %>
 

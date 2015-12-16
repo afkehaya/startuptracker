@@ -1,29 +1,31 @@
-<div class="box">
-  <h1>Listing submissions</h1>
+<div class="container">
+  <div class="box">
+    <h1>Listing submissions</h1>
 
 
 
-    <tbody>
-      <% @submissions.each do |submission| %>
-        <div class="submission">
-          <h3><%= submission.user.name %></h3>
-          <h3><%= submission.user.email %></h3>
+      <tbody>
+        <% @submissions.each do |submission| %>
+          <div class="submission">
+            <h3><%= submission.user.name %></h3>
+            <h3><%= submission.user.email %></h3>
 
-          <h3><%= submission.business %></h3>
-          <%= link_to 'Show', submission %>
-          <%= link_to 'Edit', edit_submission_path(submission) %>
-          <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <p><%= submission.description %></p>
-        
+            <h3><%= submission.business %></h3>
+            <%= link_to 'Show', submission %>
+            <%= link_to 'Edit', edit_submission_path(submission) %>
+            <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <p><%= submission.description %></p>
+          
 
-         
+           
 
-        </div>
+          </div>
 
-      <% end %>
-    
+        <% end %>
+      
 
-  <br>
+    <br>
 
-  <%= link_to 'New Submission', new_submission_path %>
+    <%= link_to 'New Submission', new_submission_path %>
+  </div>
 </div>
