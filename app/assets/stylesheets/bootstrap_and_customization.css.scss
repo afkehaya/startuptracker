@@ -1,5 +1,10 @@
 @import 'bootstrap';
 
+
+html body #bgimage {
+    background: url('notes.jpg');
+}
+
 .box {
 	position: relative;
 	width: 100%;

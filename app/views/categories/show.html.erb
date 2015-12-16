@@ -10,9 +10,9 @@
 
 	<% if policy(@category).update? %>
 	<%= link_to 'Edit', edit_industry_category_path(@category.industry, @category)  %> | <%= link_to 'Back', @category.industry %>
-	
-	<% else %>
 	<a href="mailto:alex@kehaya.com">Want to add your startup? Contact me for access.</a>
+	<% else %>
+	
 	<% end %>
 </div>
 

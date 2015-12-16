@@ -1,4 +1,4 @@
-
+ <% if policy(Industry).new? %>
   <div class="jumbotron">
     <h1>Looking for a startup's competition?</h1>
     <h4>We'll do the research for you!</h4>
@@ -48,14 +48,14 @@
 
 
     <% if user_signed_in? %>
-      <% if policy(Industry).new? %>
+     
       <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" %>
       <% else %>
        <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
        <% end%>
 
     <% else %>
-       <a href="mailto:alex@kehaya.com">Want to add your industry? Contact me for access.</a>
+      <h1> You don't have access to this page</h1>
     <% end %>
  
    
