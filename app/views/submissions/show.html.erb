@@ -7,14 +7,23 @@
 		  <%= @submission.user.email %>
 		</p>
 		<p>
-		  <strong>Business:</strong>
+		  <strong>Industry:</strong>
 		  <%= @submission.business %>
+		</p>
+		<p>
+		  <strong>Business Name:</strong>
+		  <%= @submission.name %>
+		</p>
+		<p>
+		  <strong>Business URL:</strong>
+		  <%= link_to @submission.url, @submission.url %>
 		</p>
 
 		<p>
 		  <strong>Description:</strong>
 		  <%= @submission.description %>
 		</p>
+		
 
 		<%= link_to 'Edit', edit_submission_path(@submission) %> |
 		<%= link_to 'Back', submissions_path %>

@@ -63,7 +63,7 @@ class SubmissionsController < InheritedResources::Base
     end
 
     def submission_params
-      params.require(:submission).permit(:business, :description, :user_id)
+      params.require(:submission).permit(:url, :name, :business, :description, :user_id)
     end
 end
 

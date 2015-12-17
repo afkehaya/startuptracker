@@ -13,9 +13,19 @@
               <%= submission_form.text_field :business, class: "form-control", :autofocus => true  %>
             </div>
 
+             <div class="form-group">
+              <%= submission_form.label :name %>
+              <%= submission_form.text_field :name, class: "form-control" %>
+            </div>
+        
             <div class="form-group">
-              <%= submission_form.label :description, "Describe your business. Please include a name, URL, and business model." %>
-              <br><br>
+              <%= submission_form.label :url %>
+              <%= submission_form.text_field :url, class: "form-control"  %>
+            </div>
+          
+
+            <div class="form-group">
+              <%= submission_form.label :description, "Describe your business." %>
               <%= submission_form.text_area :description, class: "form-control" %>
             </div>
           </div>

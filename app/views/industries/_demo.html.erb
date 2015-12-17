@@ -22,7 +22,7 @@
 
 		<h4>Check out our example report for startups in the Outdoor Industry</h4>
           <% @industries.each do |industry| %>
-            <%= link_to 'Demo', industry, class: "btn btn-lg btn-success" if policy(industry).show? %>
+            <%= link_to 'Outdoor Industry Report', industry, class: "btn btn-lg btn-success" if policy(industry).show? %>
             <% if industry.user === current_user %>
             <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-lg btn-primary" if policy(industry).update? %></a>
             <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger"  if policy(industry).destroy? %>
