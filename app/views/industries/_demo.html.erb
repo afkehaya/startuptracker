@@ -6,7 +6,7 @@
 	 </div>
 	 <div class="row">
  		<div class="col-lg-12">
- 			<h3>2. Then give us your business name, url, and describe the model.<h3>
+ 			<h3>2. Then tell us a little bit about your business.<h3>
  		</div>
 	 </div>
 
@@ -20,7 +20,7 @@
 	 <br>
 	 <br>
 
-		<h4>Check out the list that we created for a few startups in the Outdoor industry</h4>
+		<h4>Check out our example report for startups in the Outdoor Industry</h4>
           <% @industries.each do |industry| %>
             <%= link_to 'Demo', industry, class: "btn btn-lg btn-success" if policy(industry).show? %>
             <% if industry.user === current_user %>
