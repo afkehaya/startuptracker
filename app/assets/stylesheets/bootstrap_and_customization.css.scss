@@ -1,4 +1,5 @@
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 
 .bgimage {
@@ -28,6 +29,22 @@
 	padding-top: 20%;
 	color: white;
 }
+
+.works {
+	padding-top: 10%;
+}
+.works a {
+	text-decoration: none;
+	color: white;
+}
+
+.works a:hover{
+	color: white;
+}
+.works a:visited {
+	color: white;
+}
+
 .footer {
 	margin: 10px 10px;
 }

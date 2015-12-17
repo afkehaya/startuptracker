@@ -12,15 +12,23 @@
 
   <% else %>
 	<div class="bgimage">
-		<div class="text-center landing">
+    <div class="text-center">
+		 <div class="landing">
 	  	<h1>Looking for your startup's competition?</h1>
 	  	<h4>Our experts do the research for you and send you the report!</h4>
 
 	  <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-lg btn-danger" %>
-	</div>
+	  </div>
+
+     <div class="works">
+       <h4><a class="scroll" href="#works">How it works</a></h4>
+     </div>
+   </div>
 	</div>
 <div class="container">
   	<div class="jumbotron text-center">
+      <section id="works">
+      <a name="works"></a>
   		<%= render 'industries/demo' %>
 	</div>
  </div>
