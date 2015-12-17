@@ -12,6 +12,6 @@ class StartupsController < ApplicationController
 	private
 
 	def startup_params
-		params.require(:startup).permit(:company, :url)
+		params.require(:startup).permit(:company, :url, :description)
 	end
 end 
