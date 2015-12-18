@@ -6,15 +6,12 @@
   background: url('stars.jpeg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   width: 100%;
   min-height: 700px;
   margin-top: -20px;
   background-color:transparent;
-  opacity:0.8;
   z-index:-1;
 }
-
 .box {
 	position: relative;
 	width: 100%;
@@ -30,27 +27,8 @@
 	color: white;
 }
 
-.works {
-	padding-top: 10%;
-}
-.works a {
-	text-decoration: none;
-	color: white;
-}
-
-.works a:hover{
-	color: white;
-}
-.works a:visited {
-	color: white;
-}
-
 .footer {
 	margin: 10px 10px;
-}
-html, body {
-  width: auto !important;
-  overflow-x: hidden !important;
 }
 
 .navbar-default {

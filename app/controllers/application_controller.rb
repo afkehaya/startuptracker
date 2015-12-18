@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end 
   def home
     authorize :application, :home?
-    @industries = Industry.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+    @submissions = Submission.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 
 

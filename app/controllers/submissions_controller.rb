@@ -25,7 +25,7 @@ class SubmissionsController < InheritedResources::Base
     @submission.user = current_user
     respond_to do |format|
       if @submission.save
-        format.html { redirect_to @submission, notice: 'Submission was successfully created. Our team is working on your report and will have it to you soon.' }
+        format.html { redirect_to root_path, notice: 'Submission was successfully created. Our team is working on your report and will have it to you soon.' }
         format.json { render :show, status: :created, location: @submission }
       else
         format.html { render :new }

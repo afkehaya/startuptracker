@@ -1,4 +1,5 @@
 <% if user_signed_in? %> 
+
     <div class="container">
       <div class="box text-center">
       	<h1>Research another startup.</h1>
@@ -8,44 +9,38 @@
 
   <% else %>
 
-<div class="bgimage">
-    <div class="text-center">
-		 <div class="landing">
-	  	<h1>Looking for your startup's competition?</h1>
-	  	<h4>Our experts do the research for you and send you the report!</h4>
+    <div class="bgimage">
+        <div class="text-center">
+    		 <div class="landing">
+    	  	<h1>Looking for your startup's competition?</h1>
+    	  	<h4>Our experts do the research for you and send you the report!</h4>
 
-	  <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-md btn-danger" %>
-	  </div>
-
-     <div class="works">
-       <h4><a class="scroll" href="#works">How it works</a></h4>
-     </div>
-   </div>
-</div>
-
-<div class="container">
-	<div class="jumbotron">
-    <div class="text-center">
-      <section id="works">
-      <a name="works"></a>
-
-  		<%= render 'industries/demo' %>
-
-      <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-md btn-danger" %>
-      
-    </div>	
-
-    <div class="sample">
-      <%= render 'industries/sample' %>
+    	   <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-md btn-danger" %>
+    	  </div>
+       </div>
     </div>
-    <div class="text-center">
-      <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-md btn-danger" %>
-      <br>
-      <br>
-      <br>
 
+    <div class="container">
+    	<div class="box">
+        <div class="text-center">
+          <section id="works">
+          <a name="works"></a>
+
+      		<%= render 'industries/demo' %>
+
+          <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-md btn-danger" %>
+          <hr>
+          
+        </div>	
+
+        <div class="sample">
+          <%= render 'industries/sample' %>
+        </div>
+        <div class="text-center">
+          <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-md btn-danger" %>
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 <% end %>
 
