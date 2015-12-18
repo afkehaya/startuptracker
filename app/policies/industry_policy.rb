@@ -1,6 +1,6 @@
 class IndustryPolicy < ApplicationPolicy
 	def index?
-		true
+		user.present? && user.admin?
 	end
 	def create?
 		user.present? && user.admin?
@@ -11,7 +11,7 @@ class IndustryPolicy < ApplicationPolicy
 	end
 
 	def show?
-		true
+		user.present? && user.admin?
 	end
 
 	def destroy?

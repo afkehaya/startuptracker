@@ -1,4 +1,4 @@
- <h1>How it works.</h1>
+ <h2>How it works.</h2>
  	<div class="row">
  		<div class="col-lg-12">
  			<h3>1. Tell us what industry you'd like us to search.<h3>
@@ -16,28 +16,11 @@
  		</div>
 	 </div>
 	 
-	 <br>
-	 <br>
-	 <br>
+	 <hr>
+   
+		
+         
 
-		<h4>Check out our example report for startups in the Outdoor Industry</h4>
-          <% @industries.each do |industry| %>
-            <%= link_to 'Outdoor Industry Report', industry, class: "btn btn-lg btn-success" if policy(industry).show? %>
-            <% if industry.user === current_user %>
-            <%= link_to 'Edit', edit_industry_path(industry), class: "btn btn-lg btn-primary" if policy(industry).update? %></a>
-            <%= link_to 'Delete', industry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger"  if policy(industry).destroy? %>
-            <% end %>
-        <% end %>
-
-    <br>
-
-
-    <% if user_signed_in? %>
-      <% if policy(Industry).new? %>
-      <%= link_to 'New Industry', new_industry_path, class: "btn btn-primary" %>
-       <% end%>
-    <% end %>
- 
    
 
 

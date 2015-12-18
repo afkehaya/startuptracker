@@ -1,18 +1,14 @@
-
-
-  <% if user_signed_in? %>
-    
+<% if user_signed_in? %> 
     <div class="container">
       <div class="box text-center">
       	<h1>Research another startup.</h1>
-      	<%= link_to "Request a new report", new_submission_path, class: "btn btn-lg btn-primary" %>
-
-      	
+      	<%= link_to "Request a new report", new_submission_path, class: "btn btn-lg btn-primary" %>	
       </div>
     </div>
 
   <% else %>
-	<div class="bgimage">
+
+<div class="bgimage">
     <div class="text-center">
 		 <div class="landing">
 	  	<h1>Looking for your startup's competition?</h1>
@@ -25,15 +21,30 @@
        <h4><a class="scroll" href="#works">How it works</a></h4>
      </div>
    </div>
-	</div>
+</div>
+
 <div class="container">
-  	<div class="jumbotron text-center">
+	<div class="jumbotron">
+    <div class="text-center">
       <section id="works">
       <a name="works"></a>
-  		<%= render 'industries/demo' %>
-	</div>
- </div>
-</div> <!-- end of image background div -->
 
-  <% end %>
+  		<%= render 'industries/demo' %>
+
+      <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-lg btn-danger" %>
+      
+    </div>	
+    <div class="sample">
+      <%= render 'industries/sample' %>
+    </div>
+    <div class="text-center">
+      <%= link_to "Get your report for just $9.99", new_user_registration_path, class: "btn btn-lg btn-danger" %>
+      <br>
+      <br>
+      <br>
+
+    </div>
+  </div>
+</div>
+<% end %>
 
