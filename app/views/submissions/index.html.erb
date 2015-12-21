@@ -3,11 +3,11 @@
     <h1>Listing submissions</h1>
         <% @submissions.each do |submission| %>
           <div class="submission">
-            <h3><%= submission.user.name %></h3>
-            <h3><%= submission.user.email %></h3>
-            <h3><%= submission.description %></h3>
-            <h3><%= submission.name %></h3>
-            <h3><%= link_to submission.url, submission.url %></h3>
+            <h3><strong>User Name:</strong> <%= submission.user.name %></h3>
+            <h3><strong>User Email:</strong> <%= submission.user.email %></h3>
+            <h3><strong>Description:</strong> <%= submission.description %></h3>
+            <h3><strong>Busienss Name:</strong> <%= submission.name %></h3>
+            <h3><strong>URL:</strong> <%= link_to submission.url, submission.url %></h3>
             <h3><%= submission.business %></h3>
             <%= link_to 'Show', submission %>
             <%= link_to 'Edit', edit_submission_path(submission) %>
