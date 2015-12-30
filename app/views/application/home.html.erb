@@ -2,7 +2,7 @@
 
     <div class="container">
       <div class="box text-center">
-      	<h1>Research another startup.</h1>
+      	<h1>Get your next report.</h1>
       	<%= link_to "Request a new report", new_submission_path, class: "btn btn-lg btn-primary" %>	
       </div>
     </div>
@@ -12,8 +12,8 @@
     <div class="bgimage">
         <div class="text-center">
     		 <div class="landing">
-    	  	<h1>Looking for your startup's competition?</h1>
-    	  	<h4>Our experts do the research for you and send you the report!</h4>
+    	  	<h1>Looking for inluencers who've covered your competitors?</h1>
+    	  	<h4>Our experts do the research for you and send you a list of bloggers and other influencers who've written about similar companies to yours!</h4>
 
     	   <%= link_to "Get your report for just #{@price}", new_user_registration_path, class: "btn btn-md btn-danger" %>
     	  </div>
@@ -28,12 +28,12 @@
 
       		<%= render 'industries/demo' %>
 
-         <%= link_to "Get your report for just #{@price}", new_user_registration_path, class: "btn btn-md btn-sm btn-danger" %>
+         <%= link_to "Get your report for just #{@price}", new_user_registration_path, class: "btn btn-md btn-sm btn-danger hide" %>
           <hr>
           
         </div>	
 
-        <div class="sample">
+        <div class="sample hide">
           <%= render 'industries/sample' %>
         </div>
         <div class="text-center">
