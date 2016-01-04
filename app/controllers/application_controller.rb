@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     authorize :application, :about?
   end 
   def home
-    @price = '$19.99'
+    @price = '$30'
     authorize :application, :home?
     @submissions = Submission.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
