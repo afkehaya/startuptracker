@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
    
    before_create :add_to_list
+   after_create :send_notification
 
    has_many :industries
    has_many :categories
@@ -12,8 +13,6 @@ class User < ActiveRecord::Base
    
    has_many :submissions
    accepts_nested_attributes_for :submissions
-
-   after_create :send_notification
    
    validates :name, presence: true
 
@@ -30,6 +29,7 @@ class User < ActiveRecord::Base
         double_optin: false
         })
    end
+
    def admin?
    	role == "admin"
    end

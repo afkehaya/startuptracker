@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :submissions
-
+  resources :subscribers, only: [:new, :create]
   resources :industries
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   get "home" => "application#home"
   get "about" => "application#about"
 
-  root :to => 'application#home'
+  
+  root 'subscribers#new'
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

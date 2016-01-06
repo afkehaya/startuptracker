@@ -1,0 +1,21 @@
+<%= form_for @subscriber do |f| %>
+  <% if @subscriber.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subscriber.errors.count, "error") %> prohibited your registration from being completed:</h2>
+
+      <ul>
+      <% @subscriber.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="subscriber">
+  <div class="form-group">
+    <%= f.text_field :email, class: "form-control text-center", placeholder: "Enter Your Email Here" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Get your free list", class: "btn btn-lg btn-success" %>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,51 @@
+<% if user_signed_in? %> 
+
+    <div class="container">
+      <div class="box text-center">
+      	<h1>Get your next report.</h1>
+      	<%= link_to "Request a new report", new_submission_path, class: "btn btn-lg btn-primary" %>	
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="bgimage">
+        <div class="text-center">
+    		 <div class="landing">
+    	  	<h1>Looking for bloggers to write about your company?</h1>
+    	  	<h4>Our experts do the research for you and send you a list of bloggers and other influencers to help you launch!</h4>
+    	   <h4> Enter your e-mail below to get your first 10 free!</h4>
+
+          <%= render 'form' %>
+
+    	  </div>
+       </div>
+    </div>
+
+    <div class="container">
+    	<div class="jumbotron">
+        <div class="text-center">
+          <section id="works">
+          <a name="works"></a>
+
+      		<%= render 'industries/demo' %>
+          
+        </div>	
+
+        <div class="sample hide">
+          <%= render 'industries/sample' %>
+        </div>
+        <div class="text-center">
+          <br><br><br>
+          <h2> Want to see what the report looks like?</h2>
+          <h4> Enter your e-mail below and we'll send you a sample list free!</h4>
+
+          <%= render 'form' %>
+          
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+<% end %>
+
