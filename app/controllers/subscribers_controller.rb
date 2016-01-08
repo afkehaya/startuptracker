@@ -12,7 +12,7 @@ class SubscribersController < ApplicationController
     if @subscriber.save
       redirect_to root_url, notice: "You're report is on it's way!"
     else
-      render action: 'new', alert: "Signup failed."
+      redirect_to root_url, alert: "Signup failed."
     end
      
   end
